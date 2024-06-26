@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-bool ans(vector<int>&,int);
+void ans(vector<int>&,int);
 int main(){
     int k=0,n;
     cout<<"Enter K: ";
@@ -13,33 +13,25 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    if(ans(arr,k)){
-        cout<<"Yes,It Is Good Pair!!";
-    }else{
-        cout<<"No,It Is Not Good Pair!!";
-    }
-
+    ans(arr,k);
     return 0;
 }
 
-bool ans(vector<int>& arr,int k){
-    if(arr.size()%2!=0){
-        return false;
-    }
+void ans(vector<int>& arr,int k){
     int count=0;
     vector<int> key(arr.size(),1);
+    if(arr.size()!=0)
+    cout<<"[";
     for(int i=0;i<arr.size();i++){
         for(int j=i+1;j<arr.size();j++){
             if((arr[i]+arr[j])%k==0 && key[i]==1 && key[j]==1){
                 count++;
                 key[i]=0;
                 key[j]=0;
+                printf("(%d,%d)",arr[i],arr[j]);
+                cout<<",";
             }
         }
     }
-    if(count==(arr.size()/2)){
-        return true;
-    }else {
-        return false;
-    }
+    (arr.size()!=0)?cout<<"\b]":cout<<"[]";
 }
