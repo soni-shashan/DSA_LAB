@@ -1,6 +1,6 @@
 public class PRAC_4_1 {
     public static void main(String[] args) {
-        int[] arr={3,5};
+        int[] arr={0,0};
         System.out.print(specialArray(arr));
     }
     public static int specialArray(int[] nums) {
