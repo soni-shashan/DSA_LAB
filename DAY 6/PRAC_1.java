@@ -7,6 +7,5 @@ public class PRAC_1 {
         System.out.println("Array In ascending order : "+ Arrays.toString(ans));
         ans=countSort.dessending(arr);
         System.out.println("Array In descending order : "+ Arrays.toString(ans));
-
     }
 }
